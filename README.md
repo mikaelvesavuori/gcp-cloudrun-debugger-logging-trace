@@ -18,6 +18,10 @@ Demo of using GCP services for debugging, logging and tracing with Cloud Run.
 
 Run `deploy.sh`. Your deployed URL will be in the format `https://{REGION}-{PROJECT}.cloudfunctions.net/{FUNCTION}`. Logs are available in the [Logs view](https://console.cloud.google.com/logs/query) or through the [Functions view](https://console.cloud.google.com/functions/list).
 
+### Setup logpoints
+
+Go to [https://console.cloud.google.com/debug](https://console.cloud.google.com/debug).
+
 ### Remove resources
 
 Run `teardown.sh`. Make sure that any variables you have changed are updated in that script as well.
