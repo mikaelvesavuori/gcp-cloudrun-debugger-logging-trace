@@ -1,4 +1,4 @@
-# GCP Cloud Run: Demo of Cloud Debugger, Logging, Trace and structured logs
+# GCP Cloud Run: Demo of Cloud Debugger, Logging, Trace and structured logs [WIP, unfinished]
 
 Demo of using GCP services for debugging, logging and tracing with Cloud Run.
 
@@ -7,12 +7,6 @@ Demo of using GCP services for debugging, logging and tracing with Cloud Run.
 - You have a GCP account
 - You are logged in through your environment
 - You have set your variables as needed in `deploy.sh`
-
-## Instructions
-
-- Install dependencies with `npm install` or `yarn install`.
-- Run `npm start` or `yarn start`
-- Call or visit endpoint; should be `http://localhost:8080/`
 
 ### Deploy to GCP
 
