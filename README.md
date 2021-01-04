@@ -9,17 +9,19 @@ Demo of using GCP services for debugging, logging and tracing with Cloud Run.
 - You have set your variables as needed in `deploy.sh`
 - You have set your project ID for the logger at `src/index.js` (the `projectId` constant)
 
+## Instructions
+
 ### Deploy to GCP
 
-Run `deploy.sh`. Your deployed URL will be in the format `https://{NAME}-{RANDOM}.cloudfunctions.a.run.app`.
-
-### Check logs
-
-Basic logs are available in the [Logs view](https://console.cloud.google.com/logs/query) and the full, structured logs can be seen in [Cloud Logging](https://console.cloud.google.com/logs/query).
+Run `deploy.sh`. Your deployed URL will be in the format `https://{NAME}-{RANDOM}.a.run.app`.
 
 ### Setup logpoints and other debugging stuff
 
 Go to [https://console.cloud.google.com/debug](https://console.cloud.google.com/debug).
+
+### Check logs
+
+Basic logs are available in the [Logs view](https://console.cloud.google.com/logs/query) and the full, structured logs can be seen in [Cloud Logging](https://console.cloud.google.com/logs/query).
 
 ### Check traces
 
