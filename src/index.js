@@ -1,4 +1,9 @@
 /**
+ * @description Custom logger to support structured logs
+ */
+const Logger = require('./logger');
+
+/**
  * @description Fastify
  */
 const fastify = require('fastify');
@@ -19,7 +24,14 @@ require('@google-cloud/trace-agent').start();
  * @description The actual webserver
  */
 app.get('/', async (request, reply) => {
-  reply.code(200).header('Content-Type', 'application/json').send("Hey!");
+  const projectId = 'playground-292612';
+  const logger = new Logger(projectId, request);
+  logger.log({
+    something: 'Something here!',
+    dataValue: 23414
+  });
+
+  reply.code(200).header('Content-Type', 'application/json').send('Hey!');
 });
 
 const start = async () => {

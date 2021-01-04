@@ -1,36 +1,30 @@
-// Reference/from: https://cloud.google.com/run/docs/logging#writing_structured_logs
-
-const projectId = 'your-project-id';
+// Refer to: https://cloud.google.com/run/docs/logging#writing_structured_logs
 
 class Logger {
-  projectId = null;
-
-  constructor(projectId) {
+  constructor(projectId, req) {
     this.projectId = projectId;
+    this.req = req;
   }
 
-  create() {
+  log(message, severity = 'NOTICE') {
     const globalLogFields = {};
+    const traceHeader = this.req.headers['x-cloud-trace-context'] || this.req.headers['X-Cloud-Trace-Context'];
+    if (!traceHeader || !this.projectId) throw new Error('Missing trace header or project ID');
 
-    const traceHeader = req.header('X-Cloud-Trace-Context');
-    if (traceHeader && projectId) {
-      const [trace] = traceHeader.split('/');
-      globalLogFields[
-        'logging.googleapis.com/trace'
-      ] = `projects/${projectId}/traces/${trace}`;
-    }
+    const [trace] = traceHeader.split('/');
+    globalLogFields['logging.googleapis.com/trace'] = `projects/${this.projectId}/traces/${trace}`;
 
     const entry = Object.assign(
       {
-        severity: 'NOTICE',
-        message: 'This is the default display field.',
-        // Log viewer accesses 'component' as 'jsonPayload.component'.
-        component: 'arbitrary-property',
+        severity,
+        message,
+        component: 'arbitrary-property'
       },
       globalLogFields
     );
 
     console.log(JSON.stringify(entry));
-    return entry;
   }
 }
+
+module.exports = Logger;
