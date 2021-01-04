@@ -1,4 +1,4 @@
-# GCP Cloud Run: Demo of Cloud Debugger, Logging, Trace and structured logs [WIP, unfinished]
+# GCP Cloud Run: Demo of Cloud Debugger, Logging, Trace and structured logs
 
 Demo of using GCP services for debugging, logging and tracing with Cloud Run.
 
