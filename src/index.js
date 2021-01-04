@@ -24,7 +24,7 @@ require('@google-cloud/trace-agent').start();
  * @description The actual webserver
  */
 app.get('/', async (request, reply) => {
-  const projectId = 'playground-292612';
+  const projectId = 'your-project-id';
   const logger = new Logger(projectId, request);
   logger.log({
     something: 'Something here!',

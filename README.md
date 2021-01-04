@@ -7,6 +7,7 @@ Demo of using GCP services for debugging, logging and tracing with Cloud Run.
 - You have a GCP account
 - You are logged in through your environment
 - You have set your variables as needed in `deploy.sh`
+- You have set your project ID for the logger at `src/index.js` (the `projectId` constant)
 
 ### Deploy to GCP
 
