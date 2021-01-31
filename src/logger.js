@@ -2,7 +2,7 @@
 
 class Logger {
   constructor(projectId, req) {
-    this.projectId = projectId;
+    this.projectId = projectId || process.env.GOOGLE_CLOUD_PROJECT;
     this.req = req;
   }
 
